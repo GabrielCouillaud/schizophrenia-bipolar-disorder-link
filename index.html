@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+<!--Initialize d3 library-->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<!--Initialize stylesheet-->
+<!--Initialize main.js-->
+
+  <script type="module" crossorigin src="/assets/index-Bttw_z24.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-iKlsvoph.css">
+</head>
+
+<body> 
+<!-- Navigation bar -->  
+  <div class="navbar">
+    <a href="#" id="HomeButton">Home</a>
+    <a href="About.html">About us</a>
+    <div class="Results"> <!--naming a class is necessary for CSS-->
+      <button class="dropbtn">Results
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#" id="BubbleChart">Genetically related diseases</a> 
+        <a href="#" id="SchizoNetwork">Network: Schizoprenia related genes</a>
+        <a href="#" id="BipoNetwork">Network: Bipolar related genes</a>
+        <a href="#" id="BipoSchizoNetwork">Network: Schizoprenia and Bipolar genes</a>
+        <a href="#" id="DrugTable">Therapeutic Relation</a>
+      </div>
+    </div>
+  </div>  
+
+  <!-- home page HTML -->
+  <div id="Home">
+  <h1 style="text-align:center">Welcome to our website!</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Mental_Disorder_Silhouette.png/1280px-Mental_Disorder_Silhouette.png" width="360" height="333" class="center">
+      <div id="holder">
+        <div id="top"><h3>Introduction</h3></div>
+        <p style="text-align: justify;"> 
+          <br>Schizophrenia is a mental illness that affects a person’s behaviour, thinking and emotions. 
+          People that suffer from schizophrenia seem to have lost touch with reality (National Institute of 
+          Mental Health, 2020). Symptoms of schizophrenia can include hallucinations, delusions, disordered 
+          thinking and behaviour. You can imagine that this can heavily impair one's daily functioning. 
+          <br>Luckily, there are treatments that manage the symptoms and solve the problems related to daily 
+          functioning. However, the causes of schizophrenia are very complex and not yet fully understood. It is
+          thought that there are several factors that contribute to the risk of developing schizophrenia, namely 
+          genetic and environmental factors, for example, stressful surroundings. After intensive research, we
+          found that genetically, schizophrenia is very similar to bipolar disorder - with a total of 14 
+          dysregulated genes in common. 
+          <br>Bipolar disorder, also, is a mental disorder that causes abnormal shifts in mood, energy level, 
+          concentration and activity levels. People with bipolar disorder experience mood episodes, which are 
+          distinct periods where the person alternates between feeling very high and upbeat and feeling very sad
+          and down. Since bipolar disorder and schizophrenia apparently are very similar, we wanted to investigate
+          the genetic and therapeutic relation of the two. Therefore, the following biological question was
+          investigated: "<b>What is the genetic and therapeutic relation between schizophrenia and bipolar disorder?</b>"
+          <br>
+          <br>On this website you will find a bubble chart with the comorbidities of schizophrenia, a table 
+          showing the drug comparison, and three networks: a genetic network of schizophrenia, a genetic network 
+          of bipolar disorder and  a genetic network of the bipolar and schizophrenia genes combined. </p>
+        </p>
+        <div id="bottom">
+        <p style="font-size:9px"> References
+            <br> National Institute of Mental Health. (May 2020). Schizophrenia. Retrieved from
+            <a href="https://www.nimh.nih.gov/health/topics/schizophrenia/index.shtml">https://www.nimh.nih.gov/health/topics/schizophrenia/index.shtml</a> 
+            <br>National Institute of Mental Health. (May 2020). Bipolar Disorder. Retrieved from
+            <a href="https://www.nimh.nih.gov/health/topics/schizophrenia/index.shtml"> https://www.nimh.nih.gov/health/topics/bipolar-disorder/index.shtml</a>
+            </p>
+        </div>
+      </div>
+
+      <!--Display home and errase visualizations-->
+      <script>
+        document.getElementById("HomeButton").onclick = 
+        function initiateHome()
+        {
+         document.getElementById("visualization").style.display = "none";
+         document.getElementById("table").style.display = "none";
+         document.getElementById("sidebar").style.display ="none"; 
+         document.getElementById("Home").style.display = "block"; 
+        }
+       </script> 
+
+    </div> 
+
+<!-- Cytoscape graph and drug table insertion --> 
+<div id="visualization"></div>
+<table id = "table"> </table>
+
+<!-- Sidebar-->
+<div id="sidebar" class="sidebar">
+  <h2 id="Title"></h2>
+  <div id="Description"></div>
+  <h2 id="DegreeTitle"></h2>
+  <div id="Degrees"></div>
+  
+</div>
+<!--necessary to hide the sidebar in the main page-->
+<script>  
+document.getElementById('sidebar').style.display ="none"; 
+</script>
+
+</body>
+</html>
